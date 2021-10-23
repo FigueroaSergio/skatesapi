@@ -34,7 +34,7 @@ public class Reservacion implements Serializable  {
 	    @ManyToOne
 	    @JoinColumn(name = "id")
 	    @JsonIgnoreProperties("reservations")
-	    private Bike bike;
+	    private Skate skate;
 	
 	    @ManyToOne
 	    @JoinColumn(name = "idClient")
@@ -75,12 +75,12 @@ public class Reservacion implements Serializable  {
         this.status = status;
     }
 
-    public Bike getBike() {
-        return bike;
+    public Skate getSkate() {
+        return skate;
     }
 
-    public void setBike(Bike bike) {
-        this.bike = bike;
+    public void setSkate(Skate skate) {
+        this.skate = skate;
     }
 
     public Cliente getClient() {

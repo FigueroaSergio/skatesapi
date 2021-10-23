@@ -9,30 +9,30 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import reto3.reto3.entidades.Bike;
-import reto3.reto3.interfaces.InterfaceBike;
+import reto3.reto3.entidades.Skate;
+import reto3.reto3.interfaces.InterfaceSkate;
 
 /**
  *
  * @author figue
  */
 @Repository
-public class RepositorioBike {
+public class RepositorioSkate {
     @Autowired
-	    private InterfaceBike crud;
+	    private InterfaceSkate crud;
 	
-	    public List<Bike> getAll(){
-	        return (List<Bike>) crud.findAll();
+	    public List<Skate> getAll(){
+	        return (List<Skate>) crud.findAll();
 	    }
 	
-	    public Optional<Bike> getBike(int id){
+	    public Optional<Skate> getBike(int id){
 	        return crud.findById(id);
 	    }
 	
-	    public Bike save(Bike bike){
+	    public Skate save(Skate bike){
 	        return crud.save(bike);
 	    }
-	    public void delete(Bike bike){
+	    public void delete(Skate bike){
 	        crud.delete(bike);
 	    }
 }

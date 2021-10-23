@@ -6,12 +6,12 @@
 package reto3.reto3.interfaces;
 
 import org.springframework.data.repository.CrudRepository;
-import reto3.reto3.entidades.Bike;
+import reto3.reto3.entidades.Skate;
 
 /**
  *
  * @author figue
  */
-public interface InterfaceBike extends CrudRepository<Bike,Integer>{
+public interface InterfaceSkate extends CrudRepository<Skate,Integer>{
     
 }

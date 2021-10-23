@@ -30,7 +30,7 @@ public class Mensaje implements Serializable {
 	    @ManyToOne
 	    @JoinColumn(name="id")
 	    @JsonIgnoreProperties({"messages", "client", "reservations"})
-	    private Bike bike;
+	    private Skate skate;
 	
 	    @ManyToOne
 	    @JoinColumn(name="clientId")
@@ -53,12 +53,12 @@ public class Mensaje implements Serializable {
         this.messageText = messageText;
     }
 
-    public Bike getBike() {
-        return bike;
+    public Skate getSkate() {
+        return skate;
     }
 
-    public void setBike(Bike bike) {
-        this.bike = bike;
+    public void setSkate(Skate skate) {
+        this.skate = skate;
     }
 
     public Cliente getClient() {

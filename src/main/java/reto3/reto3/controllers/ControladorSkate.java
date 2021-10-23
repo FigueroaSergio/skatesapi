@@ -20,37 +20,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import reto3.reto3.entidades.Bike;
-import reto3.reto3.servicios.ServiciosBike;
+import reto3.reto3.entidades.Skate;
+import reto3.reto3.servicios.ServiciosSkate;
 
 /**
  *
  * @author figue
  */
 @RestController
-@RequestMapping("/api/Bike")
+@RequestMapping("/api/Skate")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class ControladorBike {
+public class ControladorSkate {
     @Autowired
-    private ServiciosBike servicio;
+    private ServiciosSkate servicio;
     @GetMapping("/all")
-    public List<Bike> getBikes(){
+    public List<Skate> getBikes(){
         return servicio.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Bike> getBike(@PathVariable("id") int bikeId) {
+    public Optional<Skate> getBike(@PathVariable("id") int bikeId) {
         return servicio.getBike(bikeId);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Bike save(@RequestBody Bike bike) {
+    public Skate save(@RequestBody Skate bike) {
         return servicio.save(bike);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Bike update(@RequestBody Bike bike) {
+    public Skate update(@RequestBody Skate bike) {
         return servicio.update(bike);
     }
 

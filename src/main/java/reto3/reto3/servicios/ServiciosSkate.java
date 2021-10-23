@@ -9,31 +9,31 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import reto3.reto3.entidades.Bike;
-import reto3.reto3.repositorios.RepositorioBike;
+import reto3.reto3.entidades.Skate;
+import reto3.reto3.repositorios.RepositorioSkate;
 
 /**
  *
  * @author figue
  */
 @Service
-public class ServiciosBike {
+public class ServiciosSkate {
     @Autowired
-    private RepositorioBike metodosCrud;
+    private RepositorioSkate metodosCrud;
 
-    public List<Bike> getAll(){
+    public List<Skate> getAll(){
         return metodosCrud.getAll();
     }
 
-    public Optional<Bike> getBike(int bikeId) {
+    public Optional<Skate> getBike(int bikeId) {
         return metodosCrud.getBike(bikeId);
     }
 
-    public Bike save(Bike bike){
+    public Skate save(Skate bike){
         if(bike.getId()==null){
             return metodosCrud.save(bike);
         }else{
-            Bike e=metodosCrud.getBike(bike.getId()).orElse(null);
+            Skate e=metodosCrud.getBike(bike.getId()).orElse(null);
             if(e==null){
                 return metodosCrud.save(bike);
             }else{
@@ -42,9 +42,9 @@ public class ServiciosBike {
         }
     }
 
-    public Bike update(Bike bike){
+    public Skate update(Skate bike){
         if(bike.getId()!=null){
-            Bike e=metodosCrud.getBike(bike.getId()).orElse(null);
+            Skate e=metodosCrud.getBike(bike.getId()).orElse(null);
             if(!(e==null)){
                 if(bike.getName()!=null){
                     e.setName(bike.getName());
