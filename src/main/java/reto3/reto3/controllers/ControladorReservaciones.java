@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import reto3.reto3.entidades.Reservacion;
+import reto3.reto3.reportes.ConstadorClientes;
+import reto3.reto3.reportes.StatusReservas;
 import reto3.reto3.servicios.ServiciosReservaciones;
 
 /**
@@ -57,5 +59,16 @@ public class ControladorReservaciones {
     public boolean delete(@PathVariable("id") int reservationId) {
         return servicio.deleteReservation(reservationId);
     }
-    
+    @GetMapping("/report-status")
+    public StatusReservas getReservas(){
+        return servicio.getReporteStatusReservaciones();
+    }
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservacion> getReservas(@PathVariable("dateOne") String dateOne,@PathVariable("dateTwo") String dateTwo){
+        return servicio.getReporteTiempoReservacion(dateOne,dateTwo);
+    }
+    @GetMapping("/report-clients")
+    public List<ConstadorClientes> getTopClientes(){
+        return servicio.getTopClientes();
+    }
 }
